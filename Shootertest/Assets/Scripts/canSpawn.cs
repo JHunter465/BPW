@@ -7,10 +7,11 @@ public class canSpawn : MonoBehaviour
     public CinemachineVirtualCamera camera2d;
     public GameObject groundPos;
     public GameObject resetPos;
+    public bool canSpawnHere = false;
 
     public bool canSpawnhere()
     {
-        if (PreviousPortal.GetComponent<Spawner3d>().HasTeleported == true)
+        if (PreviousPortal.GetComponent<Spawner3d>().HasTeleported == true || canSpawnHere)
         {
             return (true);
         }

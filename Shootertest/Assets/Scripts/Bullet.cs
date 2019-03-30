@@ -7,11 +7,7 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag == "wallPiece" || other.gameObject.tag == "wallPieceStart")
         {
             other.gameObject.GetComponent<MeshRenderer>().enabled = true;
-            BoxCollider child = other.gameObject.GetComponentInChildren<BoxCollider>();
-            if (child != gameObject.GetComponent<BoxCollider>())
-            {
-                child.isTrigger = false;
-            }
+            other.gameObject.GetComponentsInChildren<BoxCollider>()[1].isTrigger = false;
             Destroy(gameObject);
         }
     }
