@@ -10,6 +10,7 @@ TagManager:
   - Coins
   - SpecialBullet
   - Floor
+  - Untouchable
   layers:
   - Default
   - TransparentFX
@@ -23,8 +24,8 @@ TagManager:
   - Player
   - Walls
   - Floor
-  - 
-  - 
+  - Untouchable
+  - Unbreakable
   - 
   - 
   - 

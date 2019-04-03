@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using Cinemachine;
+using UnityEngine.UI;
 
 public class CharacterMovement2d : MonoBehaviour
 {
@@ -10,6 +12,10 @@ public class CharacterMovement2d : MonoBehaviour
     public GameObject groundPos;
     public Rigidbody rb;
     public int coins = 0;
+    public GameObject player3d;
+    public CinemachineVirtualCamera camera3d;
+    public CinemachineVirtualCamera camera2d;
+    public GameObject Start;
 
     void Update()
     {
@@ -21,6 +27,17 @@ public class CharacterMovement2d : MonoBehaviour
         if (transform.position.y <= groundPos.transform.position.y)
         {
             Invoke("resetPos", 1);
+        }
+        if (Input.GetButtonDown("Exit1"))
+        {
+            gameObject.SetActive(false);
+            player3d.GetComponent<FirstPersonAIO>().enabled = true;
+            player3d.GetComponent<playerController>().enabled = true;
+            camera3d.enabled = true;
+            camera2d.enabled = false;
+            GameObject crosshair = GameObject.Find("Crosshair");
+            crosshair.GetComponent<Image>().enabled = true;
+            Start.GetComponent<canSpawn>().InvisiWall.SetActive(false);
         }
     }
     void FixedUpdate()
@@ -42,6 +59,10 @@ public class CharacterMovement2d : MonoBehaviour
             Destroy(other.gameObject);
             coins++;
             FindObjectOfType<SceneManager>().Addcoins(coins);
+        }
+        if (other.gameObject.GetComponent<Fallover>() != null)
+        {
+            other.gameObject.GetComponent<Rigidbody>().useGravity = true;
         }
     }
 }

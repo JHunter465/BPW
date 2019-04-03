@@ -48,7 +48,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &3996335226824140263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,8 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f93a5134444a44a9824f0710285127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWallpieceTriggered: {fileID: 2658398783640375730, guid: 2909b942b8b4da043adc8f5d16b8fa54,
-    type: 3}
 --- !u!1001 &630013304679903554
 PrefabInstance:
   m_ObjectHideFlags: 0
