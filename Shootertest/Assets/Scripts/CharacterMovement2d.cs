@@ -58,7 +58,7 @@ public class CharacterMovement2d : MonoBehaviour
         {
             Destroy(other.gameObject);
             coins++;
-            FindObjectOfType<SceneManager>().Addcoins(coins);
+            FindObjectOfType<SceneManagert>().Addcoins(coins);
         }
         if (other.gameObject.GetComponent<Fallover>() != null)
         {

@@ -1,7 +1,8 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+public class SceneManagert : MonoBehaviour
 {
     public Text coinCount;
 
@@ -12,5 +13,9 @@ public class SceneManager : MonoBehaviour
     public void Addcoins(int coins)
     {
         coinCount.text = coins.ToString() ;
+    }
+    public void QuittoMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
